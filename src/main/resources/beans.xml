@@ -12,8 +12,7 @@
     </bean>
 
 
-    <bean name="movie1, movie2" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor" ref="actor"></constructor-arg>
+    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byName">
     </bean>
 
     <bean id="Siva" class="com.stackroute.domain.Actor">
@@ -23,25 +22,9 @@
     </bean>
 
 
-    <bean id="SivaMovie" class="com.stackroute.domain.Movie">
-        <constructor-arg index="0" ref="Siva"></constructor-arg>
+    <bean id="SivaMovie" class="com.stackroute.domain.Movie" autowire="constructor">
+        <constructor-arg name="actor" ref="Siva"></constructor-arg>
     </bean>
-
-
-    <bean id="SK" class="com.stackroute.domain.Actor">
-        <constructor-arg type="java.lang.String" value="Sivakarthikeysn"></constructor-arg>
-        <constructor-arg type="java.lang.String" value="Male"></constructor-arg>
-        <constructor-arg type="int" value="36"></constructor-arg>
-    </bean>
-
-    <bean id="SKMovie" class="com.stackroute.domain.Movie">
-        <constructor-arg type="com.stackroute.domain.Actor" ref="SK"></constructor-arg>
-    </bean>
-
-<!--    <bean id="vedhalam" class="com.stackroute.domain.Movie">-->
-<!--        <property name="actor" ref="ajith"></property>-->
-<!--    </bean>-->
-
 
 
 </beans>
