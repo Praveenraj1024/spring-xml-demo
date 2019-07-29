@@ -6,24 +6,41 @@
 
 
     <bean id="actor" class="com.stackroute.domain.Actor">
-        <property name="name" value="Sivakarthikeyan"></property>
-        <property name="gender" value="Male"></property>
-        <property name="age" value="36"></property>
+        <constructor-arg name="name" value="Sivakarthikeyan"></constructor-arg>
+        <constructor-arg name="gender" value="Male"></constructor-arg>
+        <constructor-arg name="age" value="36"></constructor-arg>
     </bean>
 
-    <bean id="ajith" class="com.stackroute.domain.Actor">
-        <property name="name" value="Ajith"></property>
-        <property name="gender" value="Male"></property>
-        <property name="age" value="56"></property>
+
+    <bean name="movie1, movie2" class="com.stackroute.domain.Movie" scope="prototype">
+        <constructor-arg name="actor" ref="actor"></constructor-arg>
     </bean>
 
-    <bean id="movie" class="com.stackroute.domain.Movie">
-        <property name="actor" ref="actor"></property>
+    <bean id="Siva" class="com.stackroute.domain.Actor">
+        <constructor-arg index="0" value="Sivakarthikeyan"></constructor-arg>
+        <constructor-arg index="1" value="Male"></constructor-arg>
+        <constructor-arg index="2" value="36"></constructor-arg>
     </bean>
 
-    <bean id="vedhalam" class="com.stackroute.domain.Movie">
-        <property name="actor" ref="ajith"></property>
+
+    <bean id="SivaMovie" class="com.stackroute.domain.Movie">
+        <constructor-arg index="0" ref="Siva"></constructor-arg>
     </bean>
+
+
+    <bean id="SK" class="com.stackroute.domain.Actor">
+        <constructor-arg type="java.lang.String" value="Sivakarthikeysn"></constructor-arg>
+        <constructor-arg type="java.lang.String" value="Male"></constructor-arg>
+        <constructor-arg type="int" value="36"></constructor-arg>
+    </bean>
+
+    <bean id="SKMovie" class="com.stackroute.domain.Movie">
+        <constructor-arg type="com.stackroute.domain.Actor" ref="SK"></constructor-arg>
+    </bean>
+
+<!--    <bean id="vedhalam" class="com.stackroute.domain.Movie">-->
+<!--        <property name="actor" ref="ajith"></property>-->
+<!--    </bean>-->
 
 
 

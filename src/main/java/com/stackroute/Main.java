@@ -2,24 +2,23 @@ package com.stackroute;
 
 
 import com.stackroute.domain.Movie;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.ClassPathResource;
 
 public class Main
 {
     public static void main( String[] args )
     {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie = applicationContext.getBean("movie", Movie.class);
+        Movie movie1 = applicationContext.getBean("movie1", Movie.class);
+        Movie Siva = applicationContext.getBean("SivaMovie", Movie.class);
+        Movie SK = applicationContext.getBean("SKMovie", Movie.class);
+        Movie movie2 = applicationContext.getBean("movie2", Movie.class);
 
-        BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        Movie vedhalam = beanFactory.getBean("vedhalam", Movie.class);
 
-
-        System.out.println(movie);
-        System.out.println(vedhalam);
+        System.out.println(movie1);
+        System.out.println(Siva);
+        System.out.println(SK);
+        System.out.println(movie1 == movie2);
     }
 }
