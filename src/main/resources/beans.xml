@@ -26,5 +26,9 @@
         <constructor-arg name="actor" ref="Siva"></constructor-arg>
     </bean>
 
+    <bean id="beanLifeCycle" class="com.stackroute.demo.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy">
+
+    </bean>
+
 
 </beans>
